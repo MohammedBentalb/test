@@ -1,0 +1,32 @@
+name: Vites deploy test
+on:
+  push:
+    branshed:
+      - dev
+      - main
+
+jobs:
+  builld-and-deploy:
+    runs-on: ubuntu-latest
+
+steps:  
+  - name: Checkout code
+    uses: actions/chekout@v3
+
+  - name: Set up node
+    uses: actions/setup-node@v3
+
+  - name: Install dependencies
+    uses: npm ci
+
+  - name: Run test
+    uses: npm ci
+
+  - name: Run test
+    run: npm run build
+
+  - name: Deploy to GitHub Pages
+    uses: peaceiris/actions-gh-pages@v6
+    with:
+      publish_dir: ./dist
+      publish_branch: gh-pages
