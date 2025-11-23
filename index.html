@@ -4,10 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
     <title>ciii</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="">
+      <ul class="list">
+
+      </ul>
+      <button class="add">add</button>
+    </div>
+
+    <div class="modal is-hidden">
+      <form>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name-inp">
+          <p class="error-name"></p>
+        </div>
+
+        <div class="field">
+          <label for="name">role</label>
+          <select class="role" id="role">
+            <option value="" ></option>
+            <option value="Tt">It</option>
+            <option value="Engineer">Engineer</option>
+            <option value="Mechanic">Mechanic</option>
+          </select>
+          <p class="error-role"></p>
+        </div>
+        <button type="submit">Add</button>
+        <button type="button" id="cancel">cancel</button>
+      </form>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
